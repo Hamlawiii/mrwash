@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Detailing | Mr. Wash GTA</title>
+    <meta name="description" content="Book your Mr. Wash detailing appointment. Choose your package, location, and preferred time across the Greater Toronto Area.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="top-bar">
+            <a class="logo" href="index.html" aria-label="Mr. Wash Home">
+                <span class="logo-icon" aria-hidden="true">&#128077;</span>
+                <span>Mr. Wash Detailing</span>
+            </a>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="gallery.html">Our Work</a></li>
+                    <li><a class="nav-active" href="booking.html">Schedule</a></li>
+                </ul>
+            </nav>
+            <a class="cta-button" href="#booking-form">Start Booking</a>
+        </div>
+        <section class="hero">
+            <div>
+                <h1>Schedule Your Mr. Wash Detailing</h1>
+                <p>Select a package, tell us where you are, and pick a time that works. We cover the entire GTA with mobile service and have an Etobicoke studio for ceramic projects.</p>
+                <div class="badge-grid" role="list">
+                    <span class="badge" role="listitem">Same-Week Availability</span>
+                    <span class="badge" role="listitem">Text &amp; Email Updates</span>
+                    <span class="badge" role="listitem">Secure Payments</span>
+                </div>
+            </div>
+            <aside class="hero-card" aria-label="How booking works">
+                <strong>Easy 3-step booking</strong>
+                <ul class="feature-list">
+                    <li>Tell us about your vehicle and location.</li>
+                    <li>Choose the service level and add-ons.</li>
+                    <li>Pick a date and time. We confirm within minutes.</li>
+                </ul>
+                <p>Need assistance? Call <a href="tel:+14165550123">(416) 555-0123</a> or email <a href="mailto:hello@mrwashgta.ca">hello@mrwashgta.ca</a>.</p>
+            </aside>
+        </section>
+    </header>
+
+    <main>
+        <section class="section section-alt" id="booking-form">
+            <div class="section-inner booking-grid">
+                <div>
+                    <h2>What to Expect</h2>
+                    <p class="section-intro">Once you submit your request, our team will verify availability and send a confirmation email and text with a secure invoice or deposit link. Mobile appointments include a check for power and water access; if that is an issue, we will plan a studio drop-off instead.</p>
+                    <div class="cards-grid">
+                        <article class="card">
+                            <h3>Preparation</h3>
+                            <p>Remove personal items and let us know about any sensitive accessories before we arrive.</p>
+                        </article>
+                        <article class="card">
+                            <h3>On the Day</h3>
+                            <p>Our crew will text when en route. Projects range from 1 to 6 hours depending on services and condition.</p>
+                        </article>
+                        <article class="card">
+                            <h3>Aftercare</h3>
+                            <p>We provide tailored aftercare guides and optional maintenance plans to keep the finish pristine.</p>
+                        </article>
+                    </div>
+                </div>
+                <aside class="booking-card">
+                    <h3>Request Your Appointment</h3>
+                    <form id="schedule-form">
+                        <fieldset>
+                            <legend>Step 1 &middot; Vehicle and Location</legend>
+                            <label>
+                                Full Name
+                                <input type="text" name="name" required placeholder="Your name">
+                            </label>
+                            <label>
+                                Email
+                                <input type="email" name="email" required placeholder="you@email.com">
+                            </label>
+                            <label>
+                                Mobile Phone
+                                <input type="tel" name="phone" required placeholder="(416) 555-0123">
+                            </label>
+                            <label>
+                                Service Location
+                                <select name="location" required>
+                                    <option value="" selected disabled>Choose an option</option>
+                                    <option>Mobile at my address</option>
+                                    <option>Drop off at Etobicoke studio</option>
+                                </select>
+                            </label>
+                            <label>
+                                Address (for mobile service)
+                                <input type="text" name="address" placeholder="Street, city, postal code">
+                            </label>
+                            <label>
+                                Vehicle Make and Model
+                                <input type="text" name="vehicle" required placeholder="e.g. 2023 Tesla Model Y">
+                            </label>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Step 2 &middot; Choose Services</legend>
+                            <label>
+                                Primary Package
+                                <select name="package" required>
+                                    <option value="" selected disabled>Select a package</option>
+                                    <option>Express Refresh</option>
+                                    <option>Signature Detail</option>
+                                    <option>Ultimate Protection</option>
+                                    <option>Fleet / Commercial</option>
+                                </select>
+                            </label>
+                            <div class="checkbox-group">
+                                <span>Add-ons</span>
+                                <label><input type="checkbox" name="addons" value="Headlight Restoration"> Headlight Restoration</label>
+                                <label><input type="checkbox" name="addons" value="Pet Hair Removal"> Pet Hair Removal</label>
+                                <label><input type="checkbox" name="addons" value="Engine Bay Detail"> Engine Bay Detail</label>
+                                <label><input type="checkbox" name="addons" value="Winter Salt Detox"> Winter Salt Detox</label>
+                            </div>
+                            <label>
+                                Tell us about the vehicle condition
+                                <textarea name="condition" placeholder="Any scratches, stains, or requests we should know about?"></textarea>
+                            </label>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Step 3 &middot; Pick Your Time</legend>
+                            <label>
+                                Preferred Date
+                                <input type="date" name="date" required>
+                            </label>
+                            <div class="time-slot-grid" role="group" aria-label="Select a time slot">
+                                <label class="time-slot"><input type="radio" name="time" value="8:00 AM" required><span>8:00 AM</span></label>
+                                <label class="time-slot"><input type="radio" name="time" value="10:30 AM"><span>10:30 AM</span></label>
+                                <label class="time-slot"><input type="radio" name="time" value="1:00 PM"><span>1:00 PM</span></label>
+                                <label class="time-slot"><input type="radio" name="time" value="3:30 PM"><span>3:30 PM</span></label>
+                                <label class="time-slot"><input type="radio" name="time" value="5:30 PM"><span>5:30 PM</span></label>
+                            </div>
+                            <label>
+                                Preferred Contact Method
+                                <select name="contact" required>
+                                    <option value="" selected disabled>Choose one</option>
+                                    <option>Text me</option>
+                                    <option>Email me</option>
+                                    <option>Call me</option>
+                                </select>
+                            </label>
+                        </fieldset>
+
+                        <button class="cta-button" type="submit">Submit Request</button>
+                    </form>
+                    <div id="booking-summary" hidden>
+                        <h4>Booking Summary</h4>
+                        <p id="summary-text"></p>
+                        <p>Our team will reach out shortly to finalize your appointment.</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <h2>Need a Business or Fleet Quote?</h2>
+                <p class="section-intro">We customize packages for dealerships, rideshare fleets, and corporate vehicles. Let us design a maintenance plan that keeps every vehicle in top shape.</p>
+                <a class="cta-button" href="mailto:fleets@mrwashgta.ca">Email Fleet Team</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <h4>Mr. Wash Detailing</h4>
+                <p>Premium mobile and in-shop detailing services across the Greater Toronto Area. Experience outstanding service with a neighbourly touch.</p>
+            </div>
+            <div>
+                <h4>Service Areas</h4>
+                <ul>
+                    <li>Toronto &amp; Scarborough</li>
+                    <li>Mississauga &amp; Brampton</li>
+                    <li>Vaughan &amp; Richmond Hill</li>
+                    <li>Oakville &amp; Burlington</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:+14165550123">(416) 555-0123</a></li>
+                    <li><a href="mailto:hello@mrwashgta.ca">hello@mrwashgta.ca</a></li>
+                    <li>123 Lakeshore Rd E, Mississauga, ON</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Hours</h4>
+                <ul>
+                    <li>Mon &ndash; Fri: 8am &ndash; 7pm</li>
+                    <li>Sat: 8am &ndash; 6pm</li>
+                    <li>Sun: By appointment</li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-bottom">&copy; <span id="year">2025</span> Mr. Wash Detailing. Proudly serving the GTA.</p>
+    </footer>
+
+    <script>
+        const yearSpan = document.getElementById('year');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
+
+        const form = document.getElementById('schedule-form');
+        const summary = document.getElementById('booking-summary');
+        const summaryText = document.getElementById('summary-text');
+
+        if (form && summary && summaryText) {
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const data = new FormData(form);
+                const addons = data.getAll('addons');
+                const summaryLines = [
+                    `Thanks ${data.get('name')}!`,
+                    `We\'ll schedule your ${data.get('package')} for ${data.get('vehicle')}.`,
+                    `Preferred time: ${data.get('date')} at ${data.get('time')}.`,
+                    `We\'ll reach you via ${data.get('contact')} at ${data.get('phone')}.`
+                ];
+                if (addons.length) {
+                    summaryLines.push(`Add-ons selected: ${addons.join(', ')}.`);
+                }
+                if (data.get('location') === 'Mobile at my address' && data.get('address')) {
+                    summaryLines.push(`Mobile service address: ${data.get('address')}.`);
+                }
+                summaryText.textContent = summaryLines.join(' ');
+                summary.hidden = false;
+                form.reset();
+                form.scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+    </script>
+</body>
+</html>
+
+
