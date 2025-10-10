@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
     <header class="site-header">
         <div class="top-bar">
             <a class="logo" href="index.html" aria-label="Mr. Wash Home">
-                <span class="logo-icon" aria-hidden="true">&#128077;</span>
+                <img class="logo-icon" src="images/logo.png" alt="Mr. Wash Detailing logo">
                 <span>Mr. Wash Detailing</span>
             </a>
             <nav aria-label="Main navigation">
@@ -20,10 +20,9 @@
                     <li><a class="nav-active" href="services.html">Services</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="gallery.html">Our Work</a></li>
-                    <li><a href="booking.html">Schedule</a></li>
                 </ul>
             </nav>
-            <a class="cta-button" href="booking.html">Book a Detailing</a>
+            <a class="cta-button" data-booking="true" href="https://scheduly.com/partner/TYM)480Gqf" target="_blank" rel="noopener">Book a Detailing</a>
         </div>
         <section class="hero">
             <div>
@@ -37,49 +36,245 @@
             </div>
             <aside class="hero-card">
                 <strong>Need help picking a package?</strong>
-                <p>Call (416) 555-0123 or tap below to chat with our team for a custom quote within 15 minutes.</p>
-                <a class="cta-button" href="tel:+14165550123">Talk to a Specialist</a>
+                <p>Call (365) 324-8155 or tap below to chat with our team for a custom quote within 15 minutes.</p>
+                <a class="cta-button" href="tel:+13653248155">Talk to a Specialist</a>
             </aside>
         </section>
     </header>
 
     <main>
-        <section class="section section-alt">
+
+        <section class="section vehicle-experience" id="vehicle-selector">
+            <div class="section-inner vehicle-experience__layout">
+                <div class="vehicle-preview" aria-live="polite">
+                    <div class="vehicle-preview__image">
+                        <img src="images/sedan.png" alt="Sedan receiving a hand wash" id="vehicle-preview-image">
+                    </div>
+                    <div class="vehicle-preview__details">
+                        <h3 id="vehicle-preview-title">Sedans</h3>
+                        <p id="vehicle-preview-text">Exterior and interior sedan detailing packages starting at $59.99.</p>
+                        <span id="vehicle-preview-price">From $59.99</span>
+                    </div>
+                </div>
+                <div class="vehicle-selector">
+                    <h2>Choose Your Body Style</h2>
+                    <p class="section-intro">Pick the vehicle size that matches your ride to update the preview and jump to recommended detailing plans.</p>
+                    <div class="vehicle-grid" role="list">
+                        <article class="vehicle-card vehicle-card--sedan is-active" role="button" tabindex="0" aria-pressed="true"
+                            data-vehicle="sedan"
+                            data-image="images/sedan.png"
+                            data-image-alt="Sedan receiving a hand wash"
+                            data-title="Sedans"
+                            data-text="Exterior and interior sedan detailing packages starting at $59.99."
+                            data-price="From $59.99"
+                            data-highlight="express">
+                            <h3>Sedans</h3>
+                            <p class="vehicle-description">Choose the right exterior or interior reset for your sedan.</p>
+                            <span class="vehicle-price">From $59.99</span>
+                            <ul class="vehicle-features">
+                                <li>
+                                    <strong>Exterior Detailing - $59.99</strong>
+                                    <ul>
+                                        <li>Deep cleaned rims</li>
+                                        <li>Tire shine application</li>
+                                        <li>Salt stain removal</li>
+                                        <li>Sap removal</li>
+                                        <li>Hand foam wash</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Basic Interior Detailing - $89.99</strong>
+                                    <ul>
+                                        <li>Vacuum</li>
+                                        <li>Dash wipe down</li>
+                                        <li>Glass cleaning</li>
+                                        <li>Door jambs</li>
+                                        <li>Choice of scent</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Deluxe Interior Detailing - $149.99</strong>
+                                    <ul>
+                                        <li>Steam cleaning</li>
+                                        <li>Shampoo mats &amp; seats</li>
+                                        <li>Leather &amp; vinyl care</li>
+                                        <li>Deep clean carpets &amp; vents</li>
+                                        <li>Door jambs &amp; floor mats</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <a class="cta-button cta-button-ghost" data-booking="true" href="https://scheduly.com/partner/TYM)480Gqf" target="_blank" rel="noopener">Book for Sedans</a>
+                        </article>
+                        <article class="vehicle-card vehicle-card--suv" role="button" tabindex="0" aria-pressed="false"
+                            data-vehicle="suv"
+                            data-image="images/suv.png"
+                            data-image-alt="SUV interior being detailed"
+                            data-title="SUVs"
+                            data-text="Exterior and interior SUV detailing packages starting at $69.99."
+                            data-price="From $69.99"
+                            data-highlight="signature">
+                            <h3>SUVs</h3>
+                            <p class="vehicle-description">Exterior and interior resets designed for SUVs with extra seating and cargo space.</p>
+                            <span class="vehicle-price">From $69.99</span>
+                            <ul class="vehicle-features">
+                                <li>
+                                    <strong>Exterior Detailing - $69.99</strong>
+                                    <ul>
+                                        <li>Deep cleaned rims</li>
+                                        <li>Tire shine application</li>
+                                        <li>Salt stain removal</li>
+                                        <li>Sap removal</li>
+                                        <li>Hand foam wash</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Basic Interior Detailing - $99.99</strong>
+                                    <ul>
+                                        <li>Vacuum</li>
+                                        <li>Dash wipe down</li>
+                                        <li>Glass cleaning</li>
+                                        <li>Door jambs</li>
+                                        <li>Choice of scent</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Deluxe Interior Detailing - $159.99</strong>
+                                    <ul>
+                                        <li>Steam cleaning</li>
+                                        <li>Shampoo mats &amp; seats</li>
+                                        <li>Leather &amp; vinyl care</li>
+                                        <li>Deep clean carpets &amp; vents</li>
+                                        <li>Door jambs &amp; floor mats</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <a class="cta-button cta-button-ghost" data-booking="true" href="https://scheduly.com/partner/TYM)480Gqf" target="_blank" rel="noopener">Book for SUVs</a>
+                        </article>
+                        <article class="vehicle-card vehicle-card--truck" role="button" tabindex="0" aria-pressed="false"
+                            data-vehicle="truck"
+                            data-image="images/truck.png"
+                            data-image-alt="Pickup truck receiving a foam cannon wash"
+                            data-title="Trucks &amp; Pickups"
+                            data-text="Exterior and interior truck detailing packages starting at $79.99."
+                            data-price="From $79.99"
+                            data-highlight="ultimate">
+                            <h3>Trucks &amp; Pickups</h3>
+                            <p class="vehicle-description">Exterior and interior resets built for work trucks and daily pickups.</p>
+                            <span class="vehicle-price">From $79.99</span>
+                            <ul class="vehicle-features">
+                                <li>
+                                    <strong>Exterior Detailing - $79.99</strong>
+                                    <ul>
+                                        <li>Deep cleaned rims</li>
+                                        <li>Tire shine application</li>
+                                        <li>Salt stain removal</li>
+                                        <li>Sap removal</li>
+                                        <li>Hand foam wash</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Basic Interior Detailing - $109.99</strong>
+                                    <ul>
+                                        <li>Vacuum</li>
+                                        <li>Dash wipe down</li>
+                                        <li>Glass cleaning</li>
+                                        <li>Door jambs</li>
+                                        <li>Choice of scent</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Deluxe Interior Detailing - $169.99</strong>
+                                    <ul>
+                                        <li>Steam cleaning</li>
+                                        <li>Shampoo mats &amp; seats</li>
+                                        <li>Leather &amp; vinyl care</li>
+                                        <li>Deep clean carpets &amp; vents</li>
+                                        <li>Door jambs &amp; floor mats</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <a class="cta-button cta-button-ghost" data-booking="true" href="https://scheduly.com/partner/TYM)480Gqf" target="_blank" rel="noopener">Book for Trucks</a>
+                        </article>
+                        <article class="vehicle-card vehicle-card--van" role="button" tabindex="0" aria-pressed="false"
+                            data-vehicle="van"
+                            data-image="images/van.png"
+                            data-image-alt="Van interior detailing"
+                            data-title="Cargo &amp; Passenger Vans"
+                            data-text="Keep commercial and family vans spotless with deep interior resets and cargo bay care."
+                            data-price="From $89.99"
+                            data-highlight="signature">
+                            <h3>Cargo &amp; Passenger Vans</h3>
+                            <p class="vehicle-description">Exterior and interior van detailing packages tailored for cargo and passenger vans.</p>
+                            <span class="vehicle-price">From $89.99</span>
+                            <ul class="vehicle-features">
+                                <li>
+                                    <strong>Exterior Detailing - $89.99</strong>
+                                    <ul>
+                                        <li>Deep cleaned rims</li>
+                                        <li>Tire shine application</li>
+                                        <li>Salt stain removal</li>
+                                        <li>Sap removal</li>
+                                        <li>Hand foam wash</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Basic Interior Detailing - $119.99</strong>
+                                    <ul>
+                                        <li>Vacuum</li>
+                                        <li>Dash Wipe down</li>
+                                        <li>Glass cleaning</li>
+                                        <li>Door jams</li>
+                                        <li>Choice of scent</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Deluxe Interior Detailing - $199.99</strong>
+                                    <ul>
+                                        <li>Steam cleaning</li>
+                                        <li>Shampoo mats &amp; seats</li>
+                                        <li>Leather &amp; vinyl care</li>
+                                        <li>Deep clean carpets &amp; vents</li>
+                                        <li>Door jambs &amp; floor mats</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <a class="cta-button cta-button-ghost" data-booking="true" href="https://scheduly.com/partner/TYM)480Gqf" target="_blank" rel="noopener">Book for Vans</a>
+                        </article>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt packages-section" id="packages">
             <div class="section-inner">
-                <h2>Our Core Detailing Packages</h2>
+                <h2>Interior Detailing Packages</h2>
+                <p class="section-intro">Choose the level that fits your needs. Pricing scales by body style to keep things fair and transparent.</p>
                 <div class="cards-grid">
-                    <article class="card">
-                        <h3>Express Refresh</h3>
-                        <p class="section-intro">Ideal for quick upkeep between full services or prepping rideshare vehicles for inspections.</p>
+                    <article class="card" data-package="basic">
+                        <h3>Basic Interior Detailing</h3>
+                        <p class="section-intro">Essential interior reset tailored to each body style.</p>
                         <ul class="feature-list">
-                            <li>Foam pre-soak &amp; hand wash</li>
-                            <li>Interior vacuum &amp; wipe-down</li>
-                            <li>Door jambs, windows, wheels</li>
-                            <li>Quick interior scent boost</li>
+                            <li>Vacuum</li>
+                            <li>Dash wipe down</li>
+                            <li>Glass cleaning</li>
+                            <li>Door jambs</li>
+                            <li>Choice of scent</li>
                         </ul>
-                        <p><strong>From $119</strong> | 60-90 minutes</p>
+                        
                     </article>
-                    <article class="card">
-                        <h3>Signature Detail</h3>
-                        <p class="section-intro">A complete reset inside and out, perfect for daily drivers combating salt, pollen, and pet hair.</p>
+                    <article class="card" data-package="deluxe">
+                        <h3>Deluxe Interior Detailing</h3>
+                        <p class="section-intro">Deep interior restoration with shampoo and steam.</p>
                         <ul class="feature-list">
-                            <li>Clay bar decontamination</li>
-                            <li>Two-stage interior shampoo &amp; steam</li>
-                            <li>Leather conditioning or fabric protectant</li>
-                            <li>Paint sealant with 3-month protection</li>
+                            <li>Steam cleaning</li>
+                            <li>Shampoo mats &amp; seats</li>
+                            <li>Leather &amp; vinyl care</li>
+                            <li>Deep clean carpets &amp; vents</li>
+                            <li>Door jambs &amp; floor mats</li>
                         </ul>
-                        <p><strong>From $249</strong> | 3-4 hours</p>
-                    </article>
-                    <article class="card">
-                        <h3>Ultimate Protection</h3>
-                        <p class="section-intro">For collectors, new deliveries, and vehicles needing a paint correction plus long-term protection.</p>
-                        <ul class="feature-list">
-                            <li>Multi-stage paint correction</li>
-                            <li>2 or 5-year ceramic coating</li>
-                            <li>Glass &amp; wheel coating upgrades</li>
-                            <li>Interior nano-protectant &amp; UV shield</li>
-                        </ul>
-                        <p><strong>From $799</strong> | Full day</p>
+                        
                     </article>
                 </div>
             </div>
@@ -91,23 +286,31 @@
                 <div class="cards-grid">
                     <article class="card">
                         <h3>Headlight Restoration</h3>
-                        <p>Restore clarity for safer night driving and improved curb appeal.</p>
-                        <p><strong>$89 per pair</strong></p>
+                        <p><strong>$45 per headlight</strong></p>
                     </article>
                     <article class="card">
-                        <h3>Engine Bay Detailing</h3>
-                        <p>Careful degreasing and dressing to keep your engine compartment looking factory fresh.</p>
-                        <p><strong>$99</strong></p>
+                        <h3>Engine Bay Cleaning</h3>
+                        <p><strong>$59.99</strong></p>
                     </article>
                     <article class="card">
-                        <h3>Pet Hair Removal</h3>
-                        <p>Specialized tools and time dedicated to removing stubborn fur from upholstery.</p>
-                        <p><strong>$49</strong></p>
+                        <h3>Ozone Odor Eliminator</h3>
+                        <p><strong>$99.99</strong></p>
                     </article>
                     <article class="card">
-                        <h3>Winter Salt Detox</h3>
-                        <p>Deep clean of carpets and undercarriage rinse to protect against corrosion.</p>
-                        <p><strong>$69</strong></p>
+                        <h3>Salt Spot Removal</h3>
+                        <p><strong>$59.99</strong></p>
+                    </article>
+                    <article class="card">
+                        <h3>Glass Water Repellent</h3>
+                        <p><strong>$39.99</strong></p>
+                    </article>
+                    <article class="card">
+                        <h3>Clay Bar Treatment</h3>
+                        <p><strong>$35-$200</strong></p>
+                    </article>
+                    <article class="card">
+                        <h3>Seatbelt Shampoo</h3>
+                        <p><strong>$35 per row</strong></p>
                     </article>
                 </div>
             </div>
@@ -115,20 +318,15 @@
 
         <section class="section section-alt">
             <div class="section-inner value-banner">
-                <img src="https://via.placeholder.com/520x340/0f3f75/ffffff?text=Ceramic+Coating" alt="Detailer applying ceramic coating to a sports car">
+                <img src="images/detailer.png" alt="Detailer applying ceramic coating to a sports car">
                 <div class="value-text">
-                    <h2>Ceramic Coating Specialists</h2>
-                    <p class="section-intro">Our technicians are IDA-certified and trained on the latest ceramic coatings for paint, glass, wheels, and interior surfaces.</p>
-                    <ul>
-                        <li>System X, Gtechniq, and CarPro certified installers</li>
-                        <li>Packages include complimentary maintenance wash</li>
-                        <li>Registered warranties with documented before/after photos</li>
-                        <li>Optional annual inspection and top-up programs</li>
-                    </ul>
-                    <a class="cta-button" href="booking.html">Request a Ceramic Quote</a>
+                    <h2>Ceramic Coating</h2>
+                    <p class="section-intro">Give your car the ultimate protection and showroom shine with our professional ceramic coating. This long-lasting, hydrophobic layer defends against dirt, UV rays, and scratches—so your vehicle stays flawless and easier to maintain for years to come.</p>
+                    <a class="cta-button" data-booking="true" href="https://scheduly.com/partner/TYM)480Gqf" target="_blank" rel="noopener">Request a Ceramic Quote</a>
                 </div>
             </div>
         </section>
+
 
         <section class="section">
             <div class="section-inner">
@@ -173,26 +371,253 @@
             <div>
                 <h4>Contact</h4>
                 <ul>
-                    <li><a href="tel:+14165550123">(416) 555-0123</a></li>
-                    <li><a href="mailto:hello@mrwashgta.ca">hello@mrwashgta.ca</a></li>
-                    <li>123 Lakeshore Rd E, Mississauga, ON</li>
+                    <li><a href="tel:+13653248155">(365) 324-8155</a></li>
+                    <li><a href="mailto:01mr.wash@gmail.com">01mr.wash@gmail.com</a></li>
+                    
                 </ul>
             </div>
             <div>
                 <h4>Hours</h4>
                 <ul>
-                    <li>Mon &ndash; Fri: 8am &ndash; 7pm</li>
-                    <li>Sat: 8am &ndash; 6pm</li>
-                    <li>Sun: By appointment</li>
+                    <li>Open 24/7</li>
                 </ul>
             </div>
         </div>
         <p class="footer-bottom">&copy; <span id="year">2025</span> Mr. Wash Detailing. Proudly serving the GTA.</p>
     </footer>
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', () => {
+            const vehicleCards = document.querySelectorAll('.vehicle-card[data-vehicle]');
+            if (!vehicleCards.length) {
+                return;
+            }
+
+            const vehicleCardList = Array.from(vehicleCards);
+
+            const previewImage = document.getElementById('vehicle-preview-image');
+            const previewTitle = document.getElementById('vehicle-preview-title');
+            const previewText = document.getElementById('vehicle-preview-text');
+            const previewPrice = document.getElementById('vehicle-preview-price');
+            const packagesSection = document.getElementById('packages');
+            const packageCards = packagesSection ? packagesSection.querySelectorAll('.card[data-package]') : [];
+            const packageCardList = Array.from(packageCards);
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            let imageSwapTimeout = null;
+
+            const highlightPackages = (key) => {
+                if (!packageCardList.length) {
+                    return;
+                }
+                packageCardList.forEach((card) => {
+                    const isMatch = card.dataset.package === key;
+                    card.classList.toggle('is-highlighted', isMatch);
+                    card.setAttribute('aria-pressed', isMatch ? 'true' : 'false');
+                });
+            };
+
+            const swapVehicle = (card, { scroll = false } = {}) => {
+                vehicleCardList.forEach((item) => {
+                    const isActive = item === card;
+                    item.classList.toggle('is-active', isActive);
+                    item.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+                });
+
+                if (previewTitle) {
+                    previewTitle.textContent = card.dataset.title;
+                }
+                if (previewText) {
+                    previewText.textContent = card.dataset.text;
+                }
+                if (previewPrice) {
+                    previewPrice.textContent = card.dataset.price;
+                }
+
+                if (previewImage && card.dataset.image) {
+                    const updateImage = () => {
+                        previewImage.src = card.dataset.image;
+                        if (card.dataset.imageAlt) {
+                            previewImage.alt = card.dataset.imageAlt;
+                        }
+                    };
+
+                    if (prefersReducedMotion) {
+                        previewImage.classList.remove('is-fading');
+                        updateImage();
+                    } else {
+                        previewImage.classList.add('is-fading');
+
+                        if (imageSwapTimeout) {
+                            window.clearTimeout(imageSwapTimeout);
+                        }
+
+                        const handleLoad = () => {
+                            previewImage.classList.remove('is-fading');
+                            previewImage.removeEventListener('load', handleLoad);
+                        };
+
+                        previewImage.addEventListener('load', handleLoad);
+                        imageSwapTimeout = window.setTimeout(updateImage, 120);
+                    }
+                }
+
+                highlightPackages(card.dataset.highlight);
+
+                if (scroll && packagesSection && !prefersReducedMotion) {
+                    window.setTimeout(() => {
+                        packagesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 220);
+                }
+            };
+
+            vehicleCardList.forEach((card) => {
+                card.addEventListener('click', () => swapVehicle(card));
+                card.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        swapVehicle(card);
+                    }
+                });
+            });
+
+            const defaultCard = document.querySelector('.vehicle-card.is-active') || vehicleCardList[0];
+            if (defaultCard) {
+                highlightPackages(defaultCard.dataset.highlight || 'express');
+                swapVehicle(defaultCard, { scroll: false });
+            }
+
+            if (packageCardList.length) {
+                packageCardList.forEach((card) => {
+                    card.setAttribute('role', 'button');
+                    card.setAttribute('tabindex', '0');
+                    card.setAttribute('aria-pressed', card.classList.contains('is-highlighted') ? 'true' : 'false');
+
+                    const activateCard = () => {
+                        const matchingVehicle = vehicleCardList.find((item) => item.dataset.highlight === card.dataset.package);
+                        if (matchingVehicle) {
+                            swapVehicle(matchingVehicle, { scroll: false });
+                        } else {
+                            highlightPackages(card.dataset.package);
+                        }
+                    };
+
+                    card.addEventListener('click', activateCard);
+                    card.addEventListener('keydown', (event) => {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                            event.preventDefault();
+                            activateCard();
+                        }
+                    });
+                });
+
+                if ('IntersectionObserver' in window && !prefersReducedMotion) {
+                    const observer = new IntersectionObserver((entries, obs) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('is-visible');
+                                obs.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.2 });
+
+                    packageCardList.forEach((card) => {
+                        observer.observe(card);
+                    });
+                } else {
+                    packageCardList.forEach((card) => {
+                        card.classList.add('is-visible');
+                    });
+                }
+            }
+
+        });
+    </script>
+    <script>
+        (function(){
+            const BOOKING_URL = 'https://scheduly.com/partner/TYM)480Gqf';
+            document.addEventListener('click', function(e){
+                const a = e.target.closest('a[data-booking="true"]');
+                if(!a) return;
+                e.preventDefault();
+                try {
+                    if (window.SchedulyWidget && typeof window.SchedulyWidget.open === 'function') {
+                        window.SchedulyWidget.open();
+                        return;
+                    }
+                    const btn = document.querySelector('[data-scheduly-widget-button], .scheduly-widget-button, .scheduly-floating-button, [data-scheduly-widget]');
+                    if (btn) { btn.click(); return; }
+                } catch(_) {}
+                window.open(a.getAttribute('href') || BOOKING_URL, '_blank', 'noopener');
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        (function () {
+            const allowedDomains = ["sch.dev.com", "scheduly.zontly.com", "scheduly.com", "www.scheduly.com"];
+            let baseUrl = window.location.host;
+            let protocol = "https://";
+
+            if (!allowedDomains.includes(baseUrl)) {
+                baseUrl = "scheduly.com";
+            }
+
+            if (baseUrl === "sch.dev.com") {
+                protocol = "http://";
+            }
+
+            const widgetScript = document.createElement("script");
+            widgetScript.type = "text/javascript";
+            widgetScript.async = true;
+            widgetScript.id = "widgetJs";
+            widgetScript.src = `${protocol}${baseUrl}/themes/widget/js/widget.js?clientId=1c5c0ad43039fd8cb07fe9b4e20726c860d8db3e`;
+
+            document.getElementsByTagName("script")[0].parentNode.insertBefore(widgetScript, null);
+        })();
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

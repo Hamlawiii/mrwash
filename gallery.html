@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
     <header class="site-header">
         <div class="top-bar">
             <a class="logo" href="index.html" aria-label="Mr. Wash Home">
-                <span class="logo-icon" aria-hidden="true">&#128077;</span>
+                <img class="logo-icon" src="images/logo.png" alt="Mr. Wash Detailing logo">
                 <span>Mr. Wash Detailing</span>
             </a>
             <nav aria-label="Main navigation">
@@ -20,14 +20,13 @@
                     <li><a href="services.html">Services</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a class="nav-active" href="gallery.html">Our Work</a></li>
-                    <li><a href="booking.html">Schedule</a></li>
                 </ul>
             </nav>
-            <a class="cta-button" href="booking.html">Book a Detailing</a>
+            <a class="cta-button" data-booking="true" href="https://scheduly.com/partner/TYM)480Gqf" target="_blank" rel="noopener">Book a Detailing</a>
         </div>
         <section class="hero gallery-hero">
             <div>
-                <h1>Before &amp; After: GTA Glow-Ups</h1>
+                <h1>Video Gallery</h1>
                 <p>From salt-stained winter warriors to concours-ready classics, here are recent projects that showcase what the Mr. Wash team can do for your ride.</p>
                 <div class="badge-grid" role="list">
                     <span class="badge" role="listitem">Mobile Detailing Vans</span>
@@ -37,154 +36,88 @@
             </div>
             <aside class="hero-card">
                 <strong>Highlight Reel</strong>
-                <p>Browse side-by-side transformations and see why GTA drivers trust Mr. Wash for serious shine.</p>
+                <p>Browse quick transformations and see why GTA drivers trust Mr. Wash for serious shine.</p>
                 <ul class="feature-list">
                     <li>Salt &amp; winter grime removal</li>
                     <li>Paint correction &amp; ceramic upgrades</li>
                     <li>Interior deep cleans &amp; stain lifts</li>
                 </ul>
-                <a class="cta-button" href="booking.html">Start Your Transformation</a>
+                <a class="cta-button" data-booking="true" href="https://scheduly.com/partner/TYM)480Gqf" target="_blank" rel="noopener">Start Your Transformation</a>
             </aside>
         </section>
     </header>
 
     <main>
-        <section class="section section-alt">
-            <div class="section-inner">
-                <h2>Recent Before &amp; Afters</h2>
-                <p class="section-intro">Side-by-side comparisons of real client vehicles completed in a single visit. Tap any photo to zoom when you load this page on mobile.</p>
-                <div class="comparison-grid">
-                    <article class="comparison-card">
-                        <header class="project-header">
-                            <h3>Winter Salt Revival</h3>
-                            <p>2018 Subaru Outback &middot; Mississauga</p>
-                        </header>
-                        <div class="comparison-images">
-                            <div class="comparison-panel">
-                                <span class="comparison-label">Before</span>
-                                <img src="images/subaru1.jpg" alt="Subaru interior before detailing with salt stains">
-                            </div>
-                            <div class="comparison-panel">
-                                <span class="comparison-label">After</span>
-                                <img src="images/subaru2.jpg" alt="Subaru interior after detailing with clean upholstery">
-                            </div>
-                        </div>
-                        <ul class="feature-list">
-                            <li>Steam extraction &amp; salt neutralizing treatment</li>
-                            <li>Ozone refresh for lingering odours</li>
-                            <li>Graphene fabric guard for future protection</li>
-                        </ul>
-                    </article>
-                    <article class="comparison-card">
-                        <header class="project-header">
-                            <h3>Black Paint Correction</h3>
-                            <p>2022 BMW M4 &middot; Vaughan</p>
-                        </header>
-                        <div class="comparison-images">
-                            <div class="comparison-panel">
-                                <span class="comparison-label">Before</span>
-                                <img src="https://via.placeholder.com/620x360/c0c6d1/0f3f75?text=Before" alt="BMW paint before correction showing swirls">
-                            </div>
-                            <div class="comparison-panel">
-                                <span class="comparison-label">After</span>
-                                <img src="https://via.placeholder.com/620x360/fcfcff/0f3f75?text=After" alt="BMW paint after correction with deep gloss">
-                            </div>
-                        </div>
-                        <ul class="feature-list">
-                            <li>Two-stage machine polish</li>
-                            <li>5-year ceramic coating applied in studio</li>
-                            <li>Wheel &amp; glass hydrophobic upgrades</li>
-                        </ul>
-                    </article>
-                    <article class="comparison-card">
-                        <header class="project-header">
-                            <h3>Family Hauler Refresh</h3>
-                            <p>2016 Honda Odyssey &middot; Brampton</p>
-                        </header>
-                        <div class="comparison-images">
-                            <div class="comparison-panel">
-                                <span class="comparison-label">Before</span>
-                                <img src="https://via.placeholder.com/620x360/d8d0c5/0f3f75?text=Before" alt="Minivan interior before detailing with crumbs and spills">
-                            </div>
-                            <div class="comparison-panel">
-                                <span class="comparison-label">After</span>
-                                <img src="https://via.placeholder.com/620x360/fdfdfd/0f3f75?text=After" alt="Minivan interior after detailing with clean seats">
-                            </div>
-                        </div>
-                        <ul class="feature-list">
-                            <li>Deep interior shampoo &amp; pet hair removal</li>
-                            <li>UV protectant on plastics &amp; leather</li>
-                            <li>Optional car seat sanitizing service</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
-
         <section class="section">
-            <div class="section-inner media-showcase">
-                <h2>Specialty Projects</h2>
-                <p class="section-intro">High-impact projects from the past year, including ceramic coatings, fleet refreshes, and classic restorations.</p>
+            <div class="section-inner">
+                <div id="featured-reel">
+                    
+                    <figure class="media-card">
+                        <video class="gallery-video gallery-video--wide" muted playsinline preload="metadata" poster="images/video6-poster.jpg" data-fullsrc="videos/video6.mp4">
+                            <source src="videos/video6.mp4" type="video/mp4">
+                        </video>
+                    </figure>
+                    <p class="section-intro">Meet the team and see a compilation of our best work in one short reel.</p>
+                </div>
+                <h2>Video Highlights</h2>
+                <p class="section-intro">A glimpse of our process and results!</p>
                 <div class="media-grid">
                     <figure class="media-card">
-                        <img src="https://via.placeholder.com/420x280/0f3f75/ffffff?text=Ceramic+Coating" alt="Detailer wiping ceramic coating on a sports car hood">
-                        <figcaption>
-                            <span class="media-icon" aria-hidden="true">&#128737;</span>
-                            <div class="media-text">
-                                <strong>Gtechniq Ultra Coating</strong>
-                                <span>2023 Porsche Taycan &middot; Toronto</span>
-                            </div>
-                        </figcaption>
+                        <video class="gallery-video" muted playsinline preload="metadata" poster="images/video1-poster.jpg" data-fullsrc="videos/video1.mp4">
+                            <source src="videos/video1.mp4" type="video/mp4">
+                        </video>
                     </figure>
                     <figure class="media-card">
-                        <img src="https://via.placeholder.com/420x280/1e90ff/ffffff?text=Fleet+Detailing" alt="Two vans lined up for fleet detailing">
-                        <figcaption>
-                            <span class="media-icon" aria-hidden="true">&#128666;</span>
-                            <div class="media-text">
-                                <strong>Fleet Refresh</strong>
-                                <span>Delivery Fleet &middot; Scarborough</span>
-                            </div>
-                        </figcaption>
+                        <video class="gallery-video" muted playsinline preload="metadata" poster="images/video2-poster.jpg" data-fullsrc="videos/video2.mp4">
+                            <source src="videos/video2.mp4" type="video/mp4">
+                        </video>
                     </figure>
                     <figure class="media-card">
-                        <img src="https://via.placeholder.com/420x280/355c7d/ffffff?text=Classic+Detail" alt="Classic car interior detailing">
-                        <figcaption>
-                            <span class="media-icon" aria-hidden="true">&#127937;</span>
-                            <div class="media-text">
-                                <strong>Concours Interior</strong>
-                                <span>1968 Mustang &middot; Oakville</span>
-                            </div>
-                        </figcaption>
+                        <video class="gallery-video" muted playsinline preload="metadata" poster="images/video3-poster.jpg" data-fullsrc="videos/video3.mp4">
+                            <source src="videos/video1-1.mp4" type="video/mp4">
+                        </video>
                     </figure>
                     <figure class="media-card">
-                        <img src="https://via.placeholder.com/420x280/19324d/ffffff?text=Boat+Detail" alt="Detailing a wake boat interior">
-                        <figcaption>
-                            <span class="media-icon" aria-hidden="true">&#127754;</span>
-                            <div class="media-text">
-                                <strong>Marine Detailing</strong>
-                                <span>Wake Boat &middot; Lake Ontario</span>
-                            </div>
-                        </figcaption>
+                        <video class="gallery-video" muted playsinline preload="metadata" poster="images/video4-poster.jpg" data-fullsrc="videos/video4.mp4">
+                            <source src="videos/video2-2.mp4" type="video/mp4">
+                        </video>
                     </figure>
-                </div>
-                <div class="media-quote">
-                    <blockquote>
-                        &ldquo;The difference is night and day. They removed years of swirl marks on my black coupe and the ceramic finish still beads after every wash.&rdquo;
-                    </blockquote>
-                    <cite>&mdash; Alicia T., North York</cite>
+                    <figure class="media-card">
+                        <video class="gallery-video" muted playsinline preload="metadata" poster="images/video5-poster.jpg" data-fullsrc="videos/video5.mp4">
+                            <source src="videos/video3.mp4" type="video/mp4">
+                        </video>
+                    </figure>
+                    <figure class="media-card">
+                        <video class="gallery-video" muted playsinline preload="metadata" poster="images/video6-poster.jpg" data-fullsrc="videos/video6.mp4">
+                            <source src="videos/video4.mp4" type="video/mp4">
+                        </video>
+                    </figure>
+                    <figure class="media-card">
+                        <video class="gallery-video" muted playsinline preload="metadata" poster="images/video7-poster.jpg" data-fullsrc="videos/video7.mp4">
+                            <source src="videos/video3-3.mp4" type="video/mp4">
+                        </video>
+                    </figure>
+                    <figure class="media-card">
+                        <video class="gallery-video" muted playsinline preload="metadata" poster="images/video8-poster.jpg" data-fullsrc="videos/video8.mp4">
+                            <source src="videos/video4-4.mp4" type="video/mp4">
+                        </video>
+                    </figure>
+                    <figure class="media-card">
+                        <video class="gallery-video" muted playsinline preload="metadata" poster="images/video9-poster.jpg" data-fullsrc="videos/video9.mp4">
+                            <source src="videos/video5.mp4" type="video/mp4">
+                        </video>
+                    </figure>
+                    <figure class="media-card">
+                        <video class="gallery-video" muted playsinline preload="metadata" poster="images/video10-poster.jpg" data-fullsrc="videos/video10.mp4">
+                            <source src="videos/video5-5.mp4" type="video/mp4">
+                        </video>
+                    </figure>
                 </div>
             </div>
         </section>
 
-        <section class="section section-alt">
-            <div class="section-inner cta-banner">
-                <div>
-                    <h2>Ready for Your Own Before &amp; After?</h2>
-                    <p class="section-intro">Share a couple of photos of your vehicle and we&apos;ll recommend the best package, timeline, and add-ons for your goals.</p>
-                </div>
-                <a class="cta-button" href="booking.html">Request a Quote</a>
-            </div>
-        </section>
+
+        
     </main>
 
     <footer>
@@ -205,17 +138,15 @@
             <div>
                 <h4>Contact</h4>
                 <ul>
-                    <li><a href="tel:+14165550123">(416) 555-0123</a></li>
-                    <li><a href="mailto:hello@mrwashgta.ca">hello@mrwashgta.ca</a></li>
-                    <li>123 Lakeshore Rd E, Mississauga, ON</li>
+                    <li><a href="tel:+13653248155">(365) 324-8155</a></li>
+                    <li><a href="mailto:01mr.wash@gmail.com">01mr.wash@gmail.com</a></li>
+                    
                 </ul>
             </div>
             <div>
                 <h4>Hours</h4>
                 <ul>
-                    <li>Mon &ndash; Fri: 8am &ndash; 7pm</li>
-                    <li>Sat: 8am &ndash; 6pm</li>
-                    <li>Sun: By appointment</li>
+                    <li>Open 24/7</li>
                 </ul>
             </div>
         </div>
@@ -223,9 +154,112 @@
     </footer>
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Enhance short video clips
+        const vids = Array.from(document.querySelectorAll('.gallery-video'));
+        // Auto play/pause when in view
+        if ('IntersectionObserver' in window && vids.length) {
+            const io = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    const v = e.target;
+                    if (e.isIntersecting && e.intersectionRatio > 0.5) {
+                        v.play().catch(()=>{});
+                    } else {
+                        v.pause();
+                    }
+                });
+            }, { threshold: [0, 0.5, 1] });
+            vids.forEach(v => io.observe(v));
+        }
+
+        // Lightweight modal to view with sound/controls
+        function injectVideoModalStyles(){
+            if (document.getElementById('video-modal-styles')) return;
+            const style = document.createElement('style');
+            style.id = 'video-modal-styles';
+            style.textContent = `
+                .video-modal{position:fixed;inset:0;z-index:1000}
+                .video-modal__backdrop{position:absolute;inset:0;background:rgba(0,0,0,.8)}
+                .video-modal__dialog{position:absolute;inset:5% 5%;display:flex;align-items:center;justify-content:center}
+                .video-modal__player{max-width:100%;max-height:100%;box-shadow:0 10px 30px rgba(0,0,0,.4);border-radius:8px;background:#000}
+                .video-modal__close{position:absolute;top:10px;right:16px;font-size:28px;line-height:1;background:transparent;border:0;color:#fff;cursor:pointer}
+                .gallery-video{width:100%;display:block;border-radius:8px;background:#000}
+            `;
+            document.head.appendChild(style);
+        }
+
+        function openVideoModal(src, poster) {
+            injectVideoModalStyles();
+            const overlay = document.createElement('div');
+            overlay.className = 'video-modal';
+            overlay.innerHTML = `
+                <div class="video-modal__backdrop" role="button" aria-label="Close"></div>
+                <div class="video-modal__dialog" role="dialog" aria-modal="true" aria-label="Video player">
+                    <button class="video-modal__close" aria-label="Close">&times;</button>
+                    <video class="video-modal__player" controls autoplay playsinline ${poster ? `poster="${poster}"` : ''}>
+                        <source src="${src}" type="video/mp4">
+                    </video>
+                </div>`;
+            document.body.appendChild(overlay);
+            const close = () => { overlay.remove(); };
+            overlay.querySelector('.video-modal__backdrop').addEventListener('click', close);
+            overlay.querySelector('.video-modal__close').addEventListener('click', close);
+            function onKey(e){ if(e.key === 'Escape'){ close(); document.removeEventListener('keydown', onKey);} }
+            document.addEventListener('keydown', onKey);
+        }
+        vids.forEach(v => {
+            v.addEventListener('click', () => openVideoModal(v.dataset.fullsrc || v.currentSrc || v.src, v.getAttribute('poster')));
+        });
+    </script>
+    <script>
+        (function(){
+            const BOOKING_URL = 'https://scheduly.com/partner/TYM)480Gqf';
+            document.addEventListener('click', function(e){
+                const a = e.target.closest('a[data-booking="true"]');
+                if(!a) return;
+                e.preventDefault();
+                try {
+                    if (window.SchedulyWidget && typeof window.SchedulyWidget.open === 'function') {
+                        window.SchedulyWidget.open();
+                        return;
+                    }
+                    const btn = document.querySelector('[data-scheduly-widget-button], .scheduly-widget-button, .scheduly-floating-button, [data-scheduly-widget]');
+                    if (btn) { btn.click(); return; }
+                } catch(_) {}
+                window.open(a.getAttribute('href') || BOOKING_URL, '_blank', 'noopener');
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        (function () {
+            const allowedDomains = ["sch.dev.com", "scheduly.zontly.com", "scheduly.com", "www.scheduly.com"];
+            let baseUrl = window.location.host;
+            let protocol = "https://";
+
+            if (!allowedDomains.includes(baseUrl)) {
+                baseUrl = "scheduly.com";
+            }
+
+            if (baseUrl === "sch.dev.com") {
+                protocol = "http://";
+            }
+
+            const widgetScript = document.createElement("script");
+            widgetScript.type = "text/javascript";
+            widgetScript.async = true;
+            widgetScript.id = "widgetJs";
+            widgetScript.src = `${protocol}${baseUrl}/themes/widget/js/widget.js?clientId=1c5c0ad43039fd8cb07fe9b4e20726c860d8db3e`;
+
+            document.getElementsByTagName("script")[0].parentNode.insertBefore(widgetScript, null);
+        })();
     </script>
 </body>
 </html>
+
+
+
+
+
 
 
 
