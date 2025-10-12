@@ -519,6 +519,25 @@ footer ul {
     gap: 0.5rem;
 }
 
+/* Simple social icon link */
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--primary-dark);
+    display: inline-block;
+}
+
+.social-link:hover .social-icon,
+.social-link:focus .social-icon {
+    transform: translateY(-1px);
+}
+
 .footer-bottom {
     text-align: center;
     margin-top: 2rem;
