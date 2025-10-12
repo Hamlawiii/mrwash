@@ -15,6 +15,11 @@
     padding: 0;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     color: var(--text-dark);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -191,6 +196,60 @@ nav a.nav-active::after {
     display: grid;
     gap: 1.5rem;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* Compact add-ons layout: small square tiles */
+.addons-grid {
+    gap: 0.75rem;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+}
+
+.addon-card {
+    padding: 0.85rem;
+    aspect-ratio: 1 / 1;
+    display: grid;
+    place-items: center;
+    justify-items: center;
+    text-align: center;
+    gap: 0.4rem;
+}
+
+.addon-card h3 {
+    font-size: 0.95rem;
+    line-height: 1.2;
+}
+
+.addon-card p {
+    margin-top: 0.1rem;
+    background: var(--neutral-light);
+    color: var(--primary-dark);
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 720px) {
+    /* Prevent add-on tiles from crowding/overlapping on small screens */
+    .addons-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.65rem;
+    }
+    .addon-card {
+        aspect-ratio: auto;
+        min-height: 120px;
+        padding: 0.75rem;
+    }
+    .addon-card h3 {
+        font-size: 0.9rem;
+        line-height: 1.2;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+        text-align: center;
+    }
+    .addon-card p {
+        font-size: 0.8rem;
+    }
 }
 
 .card {
@@ -688,11 +747,14 @@ footer ul {
     gap: 1.75rem;
     align-items: stretch;
     flex-wrap: wrap;
+    /* Ensure children can shrink to avoid horizontal overflow */
+    overflow-x: hidden;
 }
 
 .vehicle-preview,
 .vehicle-selector {
     flex: 1 1 340px;
+    min-width: 0;
 }
 
 .vehicle-preview {
@@ -727,6 +789,51 @@ footer ul {
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg, rgba(15, 63, 117, 0.05), rgba(30, 144, 255, 0.15));
+    pointer-events: none;
+}
+
+.vehicle-preview__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Overlay slider controls inside preview */
+.preview-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    border: 1px solid rgba(15, 63, 117, 0.2);
+    background: rgba(255,255,255,0.95);
+    color: var(--primary-dark);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    box-shadow: 0 10px 22px rgba(15,63,117,0.15);
+    z-index: 2;
+}
+.preview-nav.prev { left: 8px; }
+.preview-nav.next { right: 8px; }
+
+.preview-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+}
+.preview-dots .preview-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(15, 63, 117, 0.25);
+    border: 0;
+}
+.preview-dots .preview-dot.is-active {
+    background: var(--primary-dark);
+    transform: scale(1.1);
 }
 
 .vehicle-preview__image img {
@@ -965,9 +1072,10 @@ footer ul {
 }
 
 .price-matrix li {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto;
     align-items: center;
+    column-gap: 0.5rem;
     padding: 0.5rem 0.75rem;
     background: var(--neutral-light);
     border-radius: 0.6rem;
@@ -976,12 +1084,38 @@ footer ul {
 .price-matrix .price {
     font-weight: 700;
     color: var(--primary-dark);
+    white-space: nowrap;
 }
 
-@media (max-width: 520px) {
+/* Highlight selected body style price */
+.price-matrix li.is-selected {
+    background: rgba(248, 194, 78, 0.22);
+    outline: 2px solid var(--accent-yellow);
+}
+
+/* Show interior packages side-by-side on mobile, but auto-wrap if space is tight */
+@media (max-width: 720px) {
+    .packages-section .cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 0.85rem;
+    }
+    .packages-section .card {
+        padding: 1.25rem;
+    }
+}
+
+/* On very small screens, stack packages for readability */
+@media (max-width: 460px) {
     .packages-section .cards-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Improve text wrapping inside package cards to avoid clipping */
+.packages-section .card .feature-list li,
+.packages-section .card p,
+.packages-section .card h3 {
+    overflow-wrap: anywhere;
 }
 
 .packages-section .card.is-visible {
@@ -1026,6 +1160,47 @@ footer ul {
 }
 
 @media (max-width: 720px) {
+    .vehicle-slider-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.75rem;
+        margin-top: 0.5rem;
+    }
+
+    .slider-btn {
+        background: white;
+        color: var(--primary-dark);
+        border: 1px solid rgba(15, 63, 117, 0.2);
+        border-radius: 999px;
+        width: 38px;
+        height: 38px;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        box-shadow: 0 8px 18px rgba(15, 63, 117, 0.12);
+    }
+
+    .slider-dots {
+        display: flex;
+        gap: 0.4rem;
+        align-items: center;
+    }
+
+    .slider-dots .slider-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(15, 63, 117, 0.25);
+        border: 0;
+        padding: 0;
+    }
+
+    .slider-dots .slider-dot.is-active {
+        background: var(--primary-dark);
+        transform: scale(1.1);
+    }
+
     .vehicle-preview {
     background: white;
     border-radius: 1.5rem;
@@ -1058,6 +1233,31 @@ footer ul {
     .cta-banner {
         flex-direction: column;
         align-items: flex-start;
+    }
+    /* Reduce scroll on mobile: hide long feature lists in selector cards */
+    .vehicle-card .vehicle-features,
+    .vehicle-card .cta-button-ghost {
+        display: none !important;
+    }
+
+    /* Hide pricing on slider cards; pricing lives in package cards */
+    .vehicle-card .vehicle-price {
+        display: none !important;
+    }
+
+    /* Make the body-style selector a horizontal slider */
+    .vehicle-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 1rem;
+        padding-bottom: 0.25rem;
+    }
+
+    .vehicle-card {
+        flex: 0 0 85%;
+        scroll-snap-align: start;
     }
 }
 
