@@ -1,0 +1,215 @@
+            const packagesSection = document.getElementById('packages');
+            const packageCards = packagesSection ? packagesSection.querySelectorAll('.card[data-package]') : [];
+            const packageCardList = Array.from(packageCards);
+            const priceMatrices = packagesSection ? Array.from(packagesSection.querySelectorAll('[data-role="price-matrix"]')) : [];
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            let imageSwapTimeout = null;
+            let previewDots = [];
+            let current = 0;
+
+            const highlightPackages = (key) => {
+                if (!packageCardList.length) return;
+                packageCardList.forEach((card) => {
+                    const isMatch = card.dataset.package === key;
+                    card.classList.toggle('is-highlighted', isMatch);
+                    card.setAttribute('aria-pressed', isMatch ? 'true' : 'false');
+                });
+            };
+
+            function updateDots(activeIndex) {
+                if (!previewDots.length) return;
+                previewDots.forEach((d, i) => d.classList.toggle('is-active', i === activeIndex));
+            }
+
+            const setActive = (index, { scroll = false } = {}) => {
+                current = Math.max(0, Math.min(index, vehicles.length - 1));
+                const v = vehicles[current];
+
+                if (previewTitle) previewTitle.textContent = v.title;
+                if (previewText) previewText.textContent = v.text;
+                if (previewPrice) previewPrice.textContent = v.price;
+
+                if (previewImage && v.image) {
+                    const updateImage = () => {
+                        previewImage.src = v.image;
+                        if (v.imageAlt) previewImage.alt = v.imageAlt;
+                    };
+                    if (prefersReducedMotion) {
+                        previewImage.classList.remove('is-fading');
+                        updateImage();
+                    } else {
+                        previewImage.classList.add('is-fading');
+                        if (imageSwapTimeout) window.clearTimeout(imageSwapTimeout);
+                        const handleLoad = () => {
+                            previewImage.classList.remove('is-fading');
+                            previewImage.removeEventListener('load', handleLoad);
+                        };
+                        previewImage.addEventListener('load', handleLoad);
+                        imageSwapTimeout = window.setTimeout(updateImage, 120);
+                    }
+                }
+
+                highlightPackages(v.highlight);
+                if (priceMatrices.length) {
+                    priceMatrices.forEach((ul) => {
+                        ul.querySelectorAll('li').forEach((li) => {
+                            li.classList.toggle('is-selected', li.dataset.vehicle === v.vehicle);
+                        });
+                    });
+                }
+
+                updateDots(current);
+                if (scroll && packagesSection && !prefersReducedMotion) {
+                    window.setTimeout(() => {
+                        packagesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 220);
+                }
+            };
+
+            // Build preview dots and nav
+            if (previewDotsHolder) {
+                previewDotsHolder.innerHTML = '';
+                previewDots = vehicles.map((v, i) => {
+                    const b = document.createElement('button');
+                    b.type = 'button';
+                    b.className = 'preview-dot' + (i === 0 ? ' is-active' : '');
+                    b.setAttribute('aria-label', `Go to ${v.title}`);
+                    b.addEventListener('click', () => setActive(i));
+                    previewDotsHolder.appendChild(b);
+                    return b;
+                });
+            }
+            if (previewPrev) previewPrev.addEventListener('click', () => setActive(current - 1));
+            if (previewNext) previewNext.addEventListener('click', () => setActive(current + 1));
+
+            // Swipe gestures on the preview image
+            if (previewImageWrap) {
+                let startX = null, startY = null, isTouch = false;
+                const onStart = (x, y) => { startX = x; startY = y; isTouch = true; };
+                const onEnd = (x, y) => {
+                    if (!isTouch || startX === null) return;
+                    const dx = x - startX; const dy = y - startY;
+                    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 32) {
+                        if (dx < 0) setActive(current + 1); else setActive(current - 1);
+                    }
+                    startX = startY = null; isTouch = false;
+                };
+                previewImageWrap.addEventListener('touchstart', (e) => { const t = e.touches[0]; onStart(t.clientX, t.clientY); }, { passive: true });
+                previewImageWrap.addEventListener('touchend', (e) => { const t = e.changedTouches[0]; if (t) onEnd(t.clientX, t.clientY); }, { passive: true });
+                let mouseDown = false;
+                previewImageWrap.addEventListener('mousedown', (e) => { mouseDown = true; onStart(e.clientX, e.clientY); });
+                document.addEventListener('mouseup', (e) => { if (mouseDown) { onEnd(e.clientX, e.clientY); mouseDown = false; }});
+            }
+
+            // Clicking a package highlights and aligns the preview to its recommended body style
+            if (packageCardList.length) {
+                packageCardList.forEach((card) => {
+                    card.setAttribute('role', 'button');
+                    card.setAttribute('tabindex', '0');
+                    card.setAttribute('aria-pressed', card.classList.contains('is-highlighted') ? 'true' : 'false');
+
+                    const activateCard = () => {
+                        const i = vehicles.findIndex((v) => v.highlight === card.dataset.package);
+                        if (i >= 0) setActive(i, { scroll: false });
+                        else highlightPackages(card.dataset.package);
+                    };
+
+                    card.addEventListener('click', activateCard);
+                    card.addEventListener('keydown', (event) => {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                            event.preventDefault();
+                            activateCard();
+                        }
+                    });
+                });
+
+                if ('IntersectionObserver' in window && !prefersReducedMotion) {
+                    const observer = new IntersectionObserver((entries, obs) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('is-visible');
+                                obs.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.2 });
+
+                    packageCardList.forEach((card) => {
+                        observer.observe(card);
+                    });
+                } else {
+                    packageCardList.forEach((card) => {
+                        card.classList.add('is-visible');
+                    });
+                }
+            }
+
+            // Initialize with the first vehicle
+            setActive(0, { scroll: false });
+
+        });
+    </script>
+    <script>
+        (function(){
+            const BOOKING_URL = 'https://scheduly.com/partner/TYM)480Gqf';
+            document.addEventListener('click', function(e){
+                const a = e.target.closest('a[data-booking="true"]');
+                if(!a) return;
+                e.preventDefault();
+                try {
+                    if (window.SchedulyWidget && typeof window.SchedulyWidget.open === 'function') {
+                        window.SchedulyWidget.open();
+                        return;
+                    }
+                    const btn = document.querySelector('[data-scheduly-widget-button], .scheduly-widget-button, .scheduly-floating-button, [data-scheduly-widget]');
+                    if (btn) { btn.click(); return; }
+                } catch(_) {}
+                window.open(a.getAttribute('href') || BOOKING_URL, '_blank', 'noopener');
+            });
+        })();
+    </script>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

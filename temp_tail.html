@@ -1,0 +1,40 @@
+
+            if (baseUrl === "sch.dev.com") {
+                protocol = "http://";
+            }
+
+            const widgetScript = document.createElement("script");
+            widgetScript.type = "text/javascript";
+            widgetScript.async = true;
+            widgetScript.id = "widgetJs";
+            widgetScript.src = `${protocol}${baseUrl}/themes/widget/js/widget.js?clientId=1c5c0ad43039fd8cb07fe9b4e20726c860d8db3e`;
+
+            document.getElementsByTagName("script")[0].parentNode.insertBefore(widgetScript, null);
+        })();
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

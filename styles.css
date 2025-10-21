@@ -519,6 +519,56 @@ footer ul {
     gap: 0.5rem;
 }
 
+/* Contact section */
+.contact-section {
+    background: var(--neutral-light);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.contact-card {
+    background: #fff;
+    border: 1px solid rgba(15, 63, 117, 0.12);
+    border-radius: 1.25rem;
+    box-shadow: 0 16px 30px rgba(15, 63, 117, 0.08);
+    padding: 1.25rem;
+}
+
+.contact-card h3 {
+    margin-bottom: 0.75rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+}
+
+.contact-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.contact-note {
+    color: var(--text-muted);
+}
+
+@media (max-width: 800px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Simple social icon link */
 .social-link {
     display: inline-flex;
@@ -768,6 +818,56 @@ footer ul {
     flex-wrap: wrap;
     /* Ensure children can shrink to avoid horizontal overflow */
     overflow-x: hidden;
+}
+
+/* Quick body-type beans above the preview slider */
+.vehicle-beans {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 0.75rem;
+    padding: 0.4rem 0.5rem;
+    border-radius: 999px;
+    background: rgba(15, 63, 117, 0.04);
+    border: 1px solid rgba(15, 63, 117, 0.08);
+}
+
+.vehicle-bean {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--primary-dark);
+    border: 1px solid rgba(15, 63, 117, 0.2);
+    border-radius: 999px;
+    padding: 0.35rem 0.9rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vehicle-bean:hover,
+.vehicle-bean:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(15, 63, 117, 0.12);
+}
+
+.vehicle-bean.is-active {
+    background: linear-gradient(135deg, rgba(248, 194, 78, 0.35), rgba(248, 194, 78, 0.2));
+    color: #1a1a1a;
+    border-color: rgba(248, 194, 78, 0.7);
+    box-shadow: 0 8px 18px rgba(248, 194, 78, 0.25);
+}
+
+.vehicle-bean:focus-visible {
+    outline: 3px solid rgba(248, 194, 78, 0.35);
+    outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+    .vehicle-bean {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.75rem;
+    }
 }
 
 .vehicle-preview,
@@ -1052,6 +1152,8 @@ footer ul {
     border: 1px solid transparent;
 }
 
+/* (Removed special info-card styling to match other cards) */
+
 .packages-section .cards-grid {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     align-items: start;
@@ -1071,6 +1173,21 @@ footer ul {
     margin: 0.25rem auto 0.75rem;
 }
 
+/* Prominent price chip inside each package card */
+.packages-section .card .package-price {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 1.1rem;
+    border-radius: 999px;
+    background: rgba(248, 194, 78, 0.22);
+    border: 1px solid rgba(248, 194, 78, 0.6);
+    color: var(--primary-dark);
+    font-weight: 800;
+    font-size: 1.15rem;
+    margin: 0.15rem auto 0.85rem;
+}
+
 /* Center bullet lists within interior package cards */
 .packages-section .card .feature-list {
     justify-items: center;
@@ -1083,6 +1200,8 @@ footer ul {
     justify-content: center;
 }
 
+/* (Removed exterior-price grid; using single .package-price chip) */
+
 .price-matrix {
     list-style: none;
     display: grid;
@@ -1091,7 +1210,7 @@ footer ul {
 }
 
 .price-matrix li {
-    display: grid;
+    display: none;
     grid-template-columns: 1fr auto;
     align-items: center;
     column-gap: 0.5rem;
@@ -1108,9 +1227,13 @@ footer ul {
 
 /* Highlight selected body style price */
 .price-matrix li.is-selected {
+    display: grid;
     background: rgba(248, 194, 78, 0.22);
     outline: 2px solid var(--accent-yellow);
 }
+
+/* Hide the raw price tables in cards; prices are shown via .package-price */
+.price-matrix { display: none !important; }
 
 /* Show interior packages side-by-side on mobile, but auto-wrap if space is tight */
 @media (max-width: 720px) {

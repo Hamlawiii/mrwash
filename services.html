@@ -22,7 +22,7 @@
                     <li><a href="gallery.html">Our Work</a></li>
                 </ul>
             </nav>
-            <a class="cta-button" data-booking="true" href="https://scheduly.com/partner/TYM)480Gqf" target="_blank" rel="noopener">Book a Detail</a>
+            <a class="cta-button" href="services.html">Book a Detail</a>
         </div>
         <section class="hero">
             <div>
@@ -47,6 +47,12 @@
         <section class="section vehicle-experience" id="vehicle-selector">
             <div class="section-inner vehicle-experience__layout">
                 <div class="vehicle-preview" aria-live="polite">
+                    <div class="vehicle-beans" role="tablist" aria-label="Select body type">
+                        <button type="button" class="vehicle-bean is-active" data-index="0" role="tab" aria-selected="true">Sedan</button>
+                        <button type="button" class="vehicle-bean" data-index="1" role="tab" aria-selected="false">SUV</button>
+                        <button type="button" class="vehicle-bean" data-index="2" role="tab" aria-selected="false">Truck</button>
+                        <button type="button" class="vehicle-bean" data-index="3" role="tab" aria-selected="false">Van</button>
+                    </div>
                     <div class="vehicle-preview__image">
                         <button class="preview-nav prev" type="button" aria-label="Previous body style">&#8592;</button>
                         <img src="images/sedan.png" alt="Sedan receiving a hand wash" id="vehicle-preview-image">
@@ -54,7 +60,7 @@
                     </div>
                     <div class="vehicle-preview__details">
                         <h3 id="vehicle-preview-title">Sedans</h3>
-                        <p id="vehicle-preview-text">Exterior and interior sedan detailing packages starting at $59.99.</p>
+                        <p id="vehicle-preview-text"></p>
                         <span id="vehicle-preview-price">From $59.99</span>
                     </div>
                     <div class="preview-dots" aria-label="Body style navigation"></div>
@@ -65,12 +71,25 @@
 
         <section class="section section-alt packages-section" id="packages">
             <div class="section-inner">
-                <h2>Interior Detailing Packages</h2>
+                <h2>Detailing Packages</h2>
                 <p class="section-intro">Choose the level that fits your needs. Pricing scales by body style to keep things fair and transparent.</p>
                 <div class="cards-grid">
+                    <article class="card is-visible" aria-label="Exterior detailing includes">
+                        <h3>Exterior Detailing Includes</h3>
+                        <div class="package-price" data-role="exterior-package-price">From $59.99</div>
+                        <ul class="feature-list">
+                            <li>Deep cleaned rims</li>
+                            <li>Tire shine application</li>
+                            <li>Salt stain removal</li>
+                            <li>Sap removal</li>
+                            <li>Hand foam wash</li>
+                            <li>Chamois towel dry</li>
+                        </ul>
+                    </article>
                     <article class="card" data-package="basic">
                         <h3>Basic Interior Detailing</h3>
                         <p class="section-intro">Essential interior reset tailored to each body style.</p>
+                        <div class="package-price" data-role="package-price">$89.99</div>
                         <ul class="feature-list">
                             <li>Vacuum</li>
                             <li>Dash wipe down</li>
@@ -88,6 +107,7 @@
                     <article class="card" data-package="deluxe">
                         <h3>Deluxe Interior Detailing</h3>
                         <p class="section-intro">Deep interior restoration with shampoo and steam.</p>
+                        <div class="package-price" data-role="package-price">$149.99</div>
                         <ul class="feature-list">
                             <li>Steam cleaning</li>
                             <li>Shampoo mats &amp; seats</li>
@@ -148,7 +168,7 @@
                 <div class="value-text">
                     <h2>Ceramic Coating</h2>
                     <p class="section-intro">Give your car the ultimate protection and showroom shine with our professional ceramic coating. This long-lasting, hydrophobic layer defends against dirt, UV rays, and scratches—so your vehicle stays flawless and easier to maintain for years to come.</p>
-                    <a class="cta-button" data-booking="true" href="https://scheduly.com/partner/TYM)480Gqf" target="_blank" rel="noopener">Request a Ceramic Quote</a>
+                    <a class="cta-button" data-booking="true" href="services.html" target="_blank" rel="noopener">Request a Ceramic Quote</a>
                 </div>
             </div>
         </section>
@@ -160,7 +180,7 @@
                 <div class="cards-grid">
                     <article class="card">
                         <h3>1. Schedule</h3>
-                        <p>Pick a time online or call us. We confirm details, access, and power/water needs for mobile service.</p>
+                        <p>Call us. We confirm details, access, and power/water needs for mobile service.</p>
                     </article>
                     <article class="card">
                         <h3>2. Assessment</h3>
@@ -208,6 +228,14 @@
                             <span>Instagram</span>
                         </a>
                     </li>
+                    <li>
+                        <a class="social-link" href="https://www.tiktok.com/@mr.wash_ca?_t=ZS-90ikX6K8Vrr&_r=1" target="_blank" rel="noopener" aria-label="TikTok">
+                            <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M13 2h3a6 6 0 0 0 6 6v3a8.5 8.5 0 0 1-6-2.4V15a7 7 0 1 1-7-7c.7 0 1.4.1 2 .3V11a3.5 3.5 0 1 0 3.5 3.5V2z"/>
+                            </svg>
+                            <span>TikTok</span>
+                        </a>
+                    </li>
                 
                 </ul>
             </div>
@@ -224,10 +252,10 @@
         document.addEventListener('DOMContentLoaded', () => {
             // Vehicle data drives the top preview slider
             const vehicles = [
-                { vehicle: 'sedan', image: 'images/sedan.png', imageAlt: 'Sedan receiving a hand wash', title: 'Sedans', text: 'Exterior detailing package starting at $59.99.', price: 'From $59.99', highlight: 'express' },
-                { vehicle: 'suv', image: 'images/suv.png', imageAlt: 'SUV interior being detailed', title: 'SUVs', text: 'Exterior detailing package starting at $69.99.', price: 'From $69.99', highlight: 'signature' },
-                { vehicle: 'truck', image: 'images/truck.png', imageAlt: 'Pickup truck receiving a foam cannon wash', title: 'Trucks & Pickups', text: 'Exterior detailing package starting at $79.99.', price: 'From $79.99', highlight: 'ultimate' },
-                { vehicle: 'van', image: 'images/van.png', imageAlt: 'Van interior detailing', title: 'Cargo & Passenger Vans', text: 'Exterior detailing package starting at $89.99', price: 'From $89.99', highlight: 'signature' }
+                { vehicle: 'sedan', image: 'images/sedan.png', imageAlt: 'Sedan receiving a hand wash', title: 'Sedans', text: '', price: 'From $59.99', highlight: 'express' },
+                { vehicle: 'suv', image: 'images/suv.png', imageAlt: 'SUV interior being detailed', title: 'SUVs', text: '', price: 'From $69.99', highlight: 'signature' },
+                { vehicle: 'truck', image: 'images/truck.png', imageAlt: 'Pickup truck receiving a foam cannon wash', title: 'Trucks & Pickups', text: '', price: 'From $79.99', highlight: 'ultimate' },
+                { vehicle: 'van', image: 'images/van.png', imageAlt: 'Van interior detailing', title: 'Cargo & Passenger Vans', text: '', price: 'From $89.99', highlight: 'signature' }
             ];
 
             const previewImage = document.getElementById('vehicle-preview-image');
@@ -235,6 +263,7 @@
             const previewPrev = document.querySelector('.vehicle-preview .preview-nav.prev');
             const previewNext = document.querySelector('.vehicle-preview .preview-nav.next');
             const previewDotsHolder = document.querySelector('.vehicle-preview .preview-dots');
+            const beanButtons = Array.from(document.querySelectorAll('.vehicle-bean'));
             const previewTitle = document.getElementById('vehicle-preview-title');
             const previewText = document.getElementById('vehicle-preview-text');
             const previewPrice = document.getElementById('vehicle-preview-price');
@@ -242,6 +271,8 @@
             const packageCards = packagesSection ? packagesSection.querySelectorAll('.card[data-package]') : [];
             const packageCardList = Array.from(packageCards);
             const priceMatrices = packagesSection ? Array.from(packagesSection.querySelectorAll('[data-role="price-matrix"]')) : [];
+            const packagePrices = packagesSection ? Array.from(packagesSection.querySelectorAll('[data-role="package-price"]')) : [];
+            const exteriorPriceChip = document.querySelector('[data-role="exterior-package-price"]');
             const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             let imageSwapTimeout = null;
             let previewDots = [];
@@ -261,12 +292,29 @@
                 previewDots.forEach((d, i) => d.classList.toggle('is-active', i === activeIndex));
             }
 
+            function updateBeans(activeIndex) {
+                if (!beanButtons.length) return;
+                beanButtons.forEach((b, i) => {
+                    const isActive = i === activeIndex;
+                    b.classList.toggle('is-active', isActive);
+                    b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                });
+            }
+
             const setActive = (index, { scroll = false } = {}) => {
                 current = Math.max(0, Math.min(index, vehicles.length - 1));
                 const v = vehicles[current];
 
                 if (previewTitle) previewTitle.textContent = v.title;
-                if (previewText) previewText.textContent = v.text;
+                if (previewText) {
+                    if (v.text) {
+                        previewText.textContent = v.text;
+                        previewText.hidden = false;
+                    } else {
+                        previewText.textContent = '';
+                        previewText.hidden = true;
+                    }
+                }
                 if (previewPrice) previewPrice.textContent = v.price;
 
                 if (previewImage && v.image) {
@@ -293,12 +341,27 @@
                 if (priceMatrices.length) {
                     priceMatrices.forEach((ul) => {
                         ul.querySelectorAll('li').forEach((li) => {
-                            li.classList.toggle('is-selected', li.dataset.vehicle === v.vehicle);
+                            const match = li.dataset.vehicle === v.vehicle;
+                            li.classList.toggle('is-selected', match);
+                            if (match) {
+                                const card = ul.closest('.card');
+                                const priceEl = card ? card.querySelector('[data-role="package-price"]') : null;
+                                const priceText = li.querySelector('.price')?.textContent?.trim();
+                                if (priceEl && priceText) {
+                                    priceEl.textContent = priceText;
+                                }
+                            }
                         });
                     });
                 }
 
+                // Update exterior info card price chip
+                if (exteriorPriceChip) {
+                    exteriorPriceChip.textContent = v.price;
+                }
+
                 updateDots(current);
+                updateBeans(current);
                 if (scroll && packagesSection && !prefersReducedMotion) {
                     window.setTimeout(() => {
                         packagesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -321,6 +384,15 @@
             }
             if (previewPrev) previewPrev.addEventListener('click', () => setActive(current - 1));
             if (previewNext) previewNext.addEventListener('click', () => setActive(current + 1));
+
+            if (beanButtons.length) {
+                beanButtons.forEach((btn) => {
+                    const idx = parseInt(btn.dataset.index, 10);
+                    if (!Number.isNaN(idx)) {
+                        btn.addEventListener('click', () => setActive(idx, { scroll: false }));
+                    }
+                });
+            }
 
             // Swipe gestures on the preview image
             if (previewImageWrap) {
@@ -407,44 +479,9 @@
             });
         })();
     </script>
-    <script type="text/javascript">
-        (function () {
-            const allowedDomains = ["sch.dev.com", "scheduly.zontly.com", "scheduly.com", "www.scheduly.com"];
-            let baseUrl = window.location.host;
-            let protocol = "https://";
-
-            if (!allowedDomains.includes(baseUrl)) {
-                baseUrl = "scheduly.com";
-            }
-
-            if (baseUrl === "sch.dev.com") {
-                protocol = "http://";
-            }
-
-            const widgetScript = document.createElement("script");
-            widgetScript.type = "text/javascript";
-            widgetScript.async = true;
-            widgetScript.id = "widgetJs";
-            widgetScript.src = `${protocol}${baseUrl}/themes/widget/js/widget.js?clientId=1c5c0ad43039fd8cb07fe9b4e20726c860d8db3e`;
-
-            document.getElementsByTagName("script")[0].parentNode.insertBefore(widgetScript, null);
-        })();
-    </script>
+    
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
